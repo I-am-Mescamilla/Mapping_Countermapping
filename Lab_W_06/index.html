@@ -67,6 +67,11 @@ map.on('load',function(){
     'type':'vector',
     'url': 'mapbox://mescamilla-arch.b8hlu7dx'
   });
+
+  map.addSource('nycha_layer',{
+    'type':'vector',
+    'url': 'mescamilla-arch.6u5nakv8'
+  });
   // add a new layer with your polygons
   map.addLayer({
     'id':'flood_zones',
@@ -75,6 +80,15 @@ map.on('load',function(){
     'source-layer':'geo_export_04d8473e-fc93-45e1-acwteo',
     'paint':{
       'fill-color':'#b7ff3b',
+      'fill-opacity': 0.5
+    }
+    map.addLayer({
+    'id':'housing_development',
+    'type':'fill',
+    'source':'nycha_layer',
+    'source-layer':'NYCHA Public Housing Developments_20241008',
+    'paint':{
+      'fill-color':'#ff8400',
       'fill-opacity': 0.5
     }
   })
