@@ -38,7 +38,7 @@ font: 12px/20px 'Montserrat Neue',sans-serif;
 }
 #legend {
   padding: 10px;
-  box-shadow: 0 1px 2px rgba(76, 23, 45, 0.1);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   line-height: 18px;
   height: 150px;
   margin-bottom: 40px;
