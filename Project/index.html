@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title>Mapbox Storytelling</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/mapbox/assembly/publisher-staging/src/svgs/mapbox.svg">
+    <script src='https://api.mapbox.com/mapbox-gl-js/v3.7.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v3.7.0/mapbox-gl.css' rel='stylesheet' />
+    <script src="https://unpkg.com/intersection-observer@0.12.0/intersection-observer.js"></script>
+    <script src="https://unpkg.com/scrollama"></script>
+    <link href='style.css' rel='stylesheet' />
+
+    <!--Font from Google-->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cutive&family=Special+Elite&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<div id="map"></div>
+<div id="mapInset"></div>
+<div id="story"></div>
+
+<div style="visibility: hidden;" id="routes_legend" class="legend">
+    <h4>Route Types</h4>
+    <div><span style="background-color: red;"></span> Walking Route</div>
+    <div><span style="background-color: white;"></span> Train Route</div>
+</div>
+
+<div style="visibility: hidden;" id="INM_legend" class="legend">
+    <h4>Crimes to Migrants (2016-23)</h4>
+    <div><span style="background-color: #ffe5e5;"></span> 60-150</div>
+    <div><span style="background-color: #ffb3b3;"></span> 150-329</div>
+    <div><span style="background-color: #ff8080;"></span> 329-1,1571</div>
+    <div><span style="background-color: #ff4d4d;"></span> 1,571-1,881</div>
+</div>
+
+<div style="visibility: hidden;" id="CNDH_legend" class="legend">
+    <h4>Registered Kidnaps (2011-21)</h4>
+    <div><span style="background-color: #f8dfd9;"></span> 1-113</div>
+    <div><span style="background-color: #fac2bd;"></span> 113-260</div>
+    <div><span style="background-color: #fba5a1;"></span> 260-727</div>
+    <div><span style="background-color: #fc8785;"></span> 727-3,014</div>
+    <div><span style="background-color: #fe6a69;"></span> 3,014-7,412</div>
+    <div><span style="background-color: #ff4d4d;"></span> 7,412-8,780</div>
+</div>
+
+<div style="visibility: hidden;" id="routes_height" class="legend">
+    <h4>Route Types</h4>
+    <div><span style="background-color: red;"></span> Walking Route</div>
+    <div><span style="background-color: white;"></span> Train Route</div>
+    <div><span style="background-color: black;"></span> </div>
+    <h4>Crossed Municipalities Heigth</h4>
+    <div class="gradient-bar"></div>
+    <div class="labels">
+        <span>Low___________________High</span>
+    </div>
+</div>
+
+<div style="visibility: hidden;" id="crossed_territories" class="legend">
+    <h4>Route Types</h4>
+    <div><span style="background-color: red;"></span> Walking Route</div>
+    <div><span style="background-color: white;"></span> Train Route</div>
+    <div><span style="background-color: rgba(255, 255, 255, .50);"></span> Crossed Municipalities</div>
+    <div><span style="background-color: rgba(255, 255, 255, .25);"></span> Crossed States</div>
+</div>
+
+<div style="visibility: hidden;" id="routes_climate_legend" class="legend">
+    <h4>Crossed Climates</h4>
+    <div><span style="background-color: red;"></span> Walking Route</div>
+    <div><span style="background-color: white;"></span> Train Route</div>
+    <div><span style="background-color: rgba(255, 0, 0, .5);"></span> Heatwave</div>
+    <div><span style="background-color: #2b83ba;"></span> Humid Warm</div>
+    <div><span style="background-color: #4193b6;"></span> Subhumid Warm</div>
+    <div><span style="background-color: #58a2b2;"></span> Semiwarm Humid</div>
+    <div><span style="background-color: #6eb2af;"></span> Semiwarm Subhumid</div>
+    <div><span style="background-color: #84c2ab;"></span> Mild Humid</div>
+    <div><span style="background-color: #9ad1a7;"></span> Mild Subhumid</div>
+    <div><span style="background-color: #afdea5;"></span> Semicold Subhumid</div>
+    <div><span style="background-color: #bde4aa;"></span> Semidry Very Warm</div>
+    <div><span style="background-color: #cceaaf"></span> Semidry Warm</div>
+    <div><span style="background-color: #daf0b3;"></span> Semidry Semiwarm</div>
+    <div><span style="background-color: #e9f6b8;"></span> Semidry Mild</div>
+    <div><span style="background-color: #f8fcbd;"></span> Semidry Semicold</div>
+    <div><span style="background-color: #fff8b7;"></span> Dry Very Warm</div>
+    <div><span style="background-color: #feeaa6;"></span> Dry Warm</div>
+    <div><span style="background-color: #fedc96;"></span> Dry Semiwarm</div>
+    <div><span style="background-color: #fece86;"></span> Dry Mild</div>
+    <div><span style="background-color: #fdc075;"></span> Very Dry Very Warm</div>
+    <div><span style="background-color: #fdb265;"></span> Very Dry Warm</div>
+    <div><span style="background-color: #f89b58;"></span> Very Dry Semiwarm</div>
+    <div><span style="background-color: #f1814c;"></span> Very Dry Mild</div>
+    <div><span style="background-color: #ff00ff;"></span> Cold</div>
+</div>
+
+<div style="visibility: hidden;" id="routes_insecurity_legend" class="legend">
+    <h4>Route Types</h4>
+    <div><span style="background-color: red;"></span> Walking Route</div>
+    <div><span style="background-color: white;"></span> Train Route</div>
+    <div><span style="background-color: black;"></span> </div>
+    <h4>Insecurity Perception - INEGI</h4>
+    <div><span style="background-color: #e6e6e6;"></span> 14-34%</div>
+    <div><span style="background-color: #999999;"></span> 34-54%</div>
+    <div><span style="background-color: #4d4d4d;"></span> 54-69%</div>
+    <div><span style="background-color: #000000;"></span> 69-92%</div>
+</div>
+
+<div style="visibility: hidden;" id="routes_dead_legend" class="legend">
+    <h4>Route Types</h4>
+    <div><span style="background-color: red;"></span> Walking Route</div>
+    <div><span style="background-color: white;"></span> Train Route</div>
+    <div><span style="background-color: black;"></span> </div>
+    <h4>Dead and Encountered Migrants  <br>(Size per number of people involved)</h4>
+    <div><span style="background-color: #ff963d;"></span> Incidents Locations</div>
+    <div><span style="background-color: #99ecff;"></span> Encounters</div>
+</div>
+
+<div style="visibility: hidden;" id="routes_deadtype_legend" class="legend">
+    <h4>Dead or Missing Migrants, classified per casue of dead <br>(Size per number of people involved)</h4>
+    <div><span style="background-color: white;"></span> Mixed or Unknown</div>
+    <div><span style="background-color: yellow;"></span> Violenece</div>
+    <div><span style="background-color: cyan;"></span> Drowning</div>
+    <div><span style="background-color: #00ff00;"></span> Harsh Environmental Conditions</div>
+    <div><span style="background-color: red;"></span> Vehicle Accident</div>
+    <div><span style="background-color: blue;"></span> Sickness</div>
+</div>
+
+
+
+<script src="./config.js"></script>
+<script src="./script.js"></script>
+
+</body>
+</html>
