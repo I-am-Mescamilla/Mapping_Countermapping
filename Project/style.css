@@ -194,7 +194,27 @@ body {
         margin-bottom: 10px;
         }
 
-        .mapboxgl-popup-content {
+        .mapboxgl-popup.custom-popup3 .mapboxgl-popup-content {
+            max-height: 50px; /* Fixed height */
+            display: flex !important;
+            background-color: rgba(0, 0, 0, 0); !important; /* Red background */
+            color: red; !important; /* Black text */
+            font-family: sans-serif !important; /* Set font */
+            font-weight: bold !important; /* Bold font */
+            font-size: 11px !important; /* Font size */
+            border: 0px solid white !important; /* White border */
+            border-radius: 4px !important; /* Rounded corners */
+            padding: 00px !important; /* Padding */
+            vertical-align: top !important;
+            text-align: right;
+            box-shadow: 0 0px 0px rgba(0, 0, 0, 0) !important;
+        }
+
+        .mapboxgl-popup.custom-popup3 .mapboxgl-popup-tip {
+            display: none !important;
+        }
+
+        .mapboxgl-popup:not(.custom-popup3) .mapboxgl-popup-content {
             background-color: white;
             font-family: sans-serif;
             font-size: 6px/9px;
@@ -216,14 +236,23 @@ body {
         background-color: white;  /* Blue background */
         color: black;  /* White text color */
         transition: background-color 0.3s, transform 0.2s ease;  /* Smooth transition effects */
-    }
+        }
 
 
+        .full-bleed-image {
+            position: relative;
+            width: 100vw; /* Full viewport width */
+            height: auto; /* Let height adjust automatically based on the aspect ratio */
+            overflow: hidden;
+            margin: 0; /* Remove default margins */
+        }
 
-
-
-
-
+        .full-bleed-image img {
+            position: relative;
+            width: 100%; /* Ensure the image spans the entire width */
+            height: auto; /* Maintain aspect ratio */
+            display: block; /* Prevent inline space below the image */
+        }
 
         /* Fix issue on mobile browser where scroll breaks  */
         .mapboxgl-canvas-container.mapboxgl-touch-zoom-rotate.mapboxgl-touch-drag-pan,

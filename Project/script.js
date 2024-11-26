@@ -60,6 +60,13 @@ var popup2 = new mapboxgl.Popup({
         closeOnClick: false
       });
 
+var popup3 = new mapboxgl.Popup({
+        className: 'custom-popup3',
+        offset: [0, -7],
+        closeButton: false,
+        closeOnClick: false
+      });
+
 var story = document.getElementById('story');
 var features = document.createElement('div');
 features.setAttribute('id', 'features');
@@ -143,6 +150,23 @@ config.chapters.forEach((record, idx) => {
         var story2 = document.createElement('p');
         story2.innerHTML = record.description2;
         chapter.appendChild(story2);
+    }
+
+    if (record.image3) {
+        // Create a container for the full-bleed image
+        var fullBleedContainer = document.createElement('div');
+        fullBleedContainer.className = 'full-bleed-image'; // Add the full-bleed class
+
+        // Create the image element
+        var image3 = new Image();
+        image3.src = record.image3;
+        image3.alt = record.imageAlt || 'Chapter image'; // Add alt text for accessibility
+
+        // Append the image to the container
+        fullBleedContainer.appendChild(image3);
+
+        // Append the container to the chapter
+        chapter.appendChild(fullBleedContainer);
     }
 
     if (record.video) {
@@ -494,6 +518,8 @@ map.on("load", function() {
         const formattedMx_Mun_Cri = parseFloat(Mx_Mun_Cri).toFixed(2);
 
         var description = '<h4>' + 'Conditions in Municipality: ' +NOMGEO+'<br>'+
+                           '</h4>'+
+                           '<h4>' + 'Crimes per 1,000 habitants: ' +formattedMx_Mun_Cri+
                            '</h4>'+ 
                           '<p> Population: '+Population +'<br>'+
                           'Yearly Murders: '+Year_tot_1 +'<br>'+
@@ -529,6 +555,7 @@ map.on("load", function() {
     map.on('mousemove', 'simple-drugcartels', function (e) {
         if (!isLayerVisible6) return; // Exit if the layer is not visible
         var coordinates = e.lngLat;
+
         // Function to transform value from empty to Yes/No
         function emptyToYesNo(val) {
             return val.length > 1 ? "Yes" : "No"; // Return 'Yes' if length > 1, otherwise 'No'
@@ -537,17 +564,18 @@ map.on("load", function() {
         
         // Format Mx_Mun_Cri to 2 decimal places
 
-        var description = '<h4>' + 'Drug Cartel: ' +BaseCartel+'<br>'+
-                           '</h4>'
+        var description = '<h4>' + 'Cartel: ' +BaseCartel+'<br>'+
+                           '</h4>'           
 
-        popup2.setLngLat(coordinates).setHTML(description).addTo(map);
+        popup3.setLngLat(coordinates).setHTML(description).addTo(map);
     });
     // Mouseleave event to remove popup
     map.on('mouseleave', 'simple-drugcartels', function () {
         if (!isLayerVisible6) return; // Exit if the layer is not visible
         map.getCanvas().style.cursor = ''; // Reset cursor
-        popup2.remove(); // Remove the popup
+        popup3.remove(); // Remove the popup
     });
+    
 
     // PopUp seventh - Dead per type
 
@@ -788,6 +816,9 @@ map.on('load', function () {
         }
     });
 });
+
+
+
 
 
 
