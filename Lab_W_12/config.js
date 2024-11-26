@@ -1,5 +1,5 @@
 var config = {
-    style: 'mapbox://styles/mescamilla-arch/cm2y1e1zo00i101pc6hgh5uur',
+    style: 'mapbox://styles/mescamilla-arch/cm3ouwe3t00q601r2dty54ym7',
     accessToken: 'pk.eyJ1IjoibWVzY2FtaWxsYS1hcmNoIiwiYSI6ImNtMXRpMXpoNTAybzAyanB4OTFuZnJ1c24ifQ.5yAwDGHE56G-z1ZzjxhWCw',
     //'pk.eyJ1IjoiaWFtd2Z4IiwiYSI6ImNqNGFnMnIyMzEwZzgycXJ1ODdqbG14eGMifQ.3AqBqXZlcbsbEhxddAPB-g',
     showMarkers: false,
@@ -13,7 +13,7 @@ var config = {
     title: 'Public and Affordable Housing Flood Risk',
     subtitle: 'Is flooding a coincidence?',
     byline: 'Marcos Escamilla-Guerrero',
-    para1:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis nisi non egestas tempor. Nullam et finibus sapien. Vivamus id pulvinar ligula, quis accumsan velit. Phasellus at molestie lacus. Integer nec dui libero. Suspendisse mollis urna lacinia consectetur accumsan. Phasellus interdum magna libero, in congue risus convallis sed. Mauris cursus volutpat sapien, non iaculis purus convallis sed. Phasellus ac imperdiet neque.',
+    para1:"The ongoing international migration through Mexico has escalated into a humanitarian crisis marked by a complex interplay of human rights violations, geopolitical challenges, environmental factors, and rising crime rates. According to the International Organization for Migration (IOM), only in 2022, 686 deaths and migrant disappearances were documented on the US-Mexico border. However, if the whole Mexican territory is evaluated, the numbers rise. Sadly, non-governmental organizations have led the majority of efforts to address this crisis by managing shelters and healthcare checkpoints spread across the country. On the other hand, the Mexican government's actions have proven to be insufficient in mitigating the worsening conditions. To this date, Mexico’s position towards the future seems uncertain. The recent presidential transition in Mexico and the upcoming elections in the United States (2024) have increased the speculation and stress over this topic. Furthermore, the policies implemented under former President Andrés Manuel López Obrador, particularly his "Abrazos no Balazos" (Hugs no Shots) strategy, have not only failed to alleviate the general violence in the Mexican territory but have, in many cases, exacerbated the insecurity faced by migrants.",
     para2:'Donec sollicitudin justo nec nibh dapibus fermentum. Ut vel ipsum dictum ante aliquet fermentum in pellentesque lorem. Etiam vitae pulvinar ipsum. Mauris eleifend viverra orci, eu porta est auctor eget. Nunc quis pulvinar mauris. Sed fringilla tincidunt nisi sed semper. Phasellus at dapibus lorem. Nunc dapibus, velit vel volutpat consectetur, velit velit hendrerit leo, sit amet malesuada dui libero non nunc. Cras pulvinar bibendum purus et porta. Donec ut tincidunt tortor. Curabitur ornare, libero sed lacinia auctor, lorem dui consequat sapien, nec consectetur augue leo eget metus. Fusce nibh sapien, consequat vitae euismod eget, bibendum quis ipsum.',
     footer: 'Source: source citations, etc. <br> Created using <a href="https://github.com/mapbox/storytelling" target="_blank">Mapbox Storytelling</a> template.',
     chapters: [
