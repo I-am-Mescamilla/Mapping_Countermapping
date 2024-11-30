@@ -50,6 +50,22 @@ body {
           font-weight: 400;
           font-style: normal;
         }
+        #header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* 2% black */
+            z-index: 1; /* Places it below content but above the background */
+        }
+        #header * {
+            position: relative; /* Ensures text and other elements are above the overlay */
+            z-index: 2;
+        }
+
+
         #header h1, #header h2, #header p {
             margin: 0;
             padding: 2vh 2vw;
@@ -65,12 +81,12 @@ body {
             padding-top:0vh;
             color: white;
             font-size:3vh;
-            padding-bottom:72vh;
+            padding-bottom:75vh;
         }
         #header p{
         font-size: 1.5vh;
         font-family: "Cutive", serif;
-        font-weight: 400;
+        font-weight: 400
         font-style: normal;
         text-align: justify;
         margin-left: 34vw;

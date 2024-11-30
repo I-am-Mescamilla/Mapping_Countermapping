@@ -1830,7 +1830,7 @@ var config = {
             hidden: false,
             title: 'Hermosillo - The Last Region',
             image: 'images/Hermosillo_Migrants.webp',
-            description: "",
+            description: "Hermosillo is a critical hub for migration due to its proximity to the U.S. border and key crossing points like Nogales. The city's shelters are increasingly overwhelmed as expulsions under U.S. immigration policies redirect migrants into northern Mexico. Many migrants face harsh conditions, relying on limited local resources while navigating the dangers of organized crime and extreme desert climates. The pressure on Hermosillo’s infrastructure highlights its central role in migration routes.",
             location: {
                 center: [-113.01459, 29.47249],
                 zoom: 7.70,
@@ -1892,7 +1892,7 @@ var config = {
             hidden: false,
             title: 'Calm?',
             image: 'images/Hermosillo_City.jpg',
-            description: "",
+            description: "The city as well faces significant challenges with poverty and crime, which exacerbate the difficulties for both residents and migrants. Criminal groups exploit the city’s strategic location near the U.S. border, engaging in smuggling and extortion, increasing local insecurity. Many neighborhoods struggle with economic deprivation, limiting opportunities and resources, creating a tense environment for migrants relying on local NGO’s. These overlapping issues complicate the city's ability to address migration effectively while maintaining public safety.",
             location: {
                 center: [-113.01459, 29.47249],
                 zoom: 7.70,
@@ -1953,7 +1953,7 @@ var config = {
             hidden: false,
             title: 'Not so calm...',
             image: 'images/Hermosillo_Insecurity.webp',
-            description: "",
+            description: "Sonora faces escalating insecurity challenges, particularly in municipalities like Hermosillo, Caborca, and others in the northern region. Caborca has become one of the most dangerous areas, with homicide rates rising by 68.42% in 2024, driven by disputes among organized crime groups vying for control of drug and human trafficking routes. Agricultural workers have reported armed confrontations disrupting daily activities, and general fear permeates communities. This violence exacerbates poverty, and migration struggles across the region.",
             location: {
                 center: [-113.01459, 29.47249],
                 zoom: 7.70,
@@ -2014,7 +2014,7 @@ var config = {
             hidden: false,
             title: 'Cartel de Sinaloa Kingdom',
             image: 'images/Hermosillo_Cartels.jpg',
-            description: "",
+            description: "The Sinaloa Cartel dominates much of Sonora, leveraging the state's location as a strategic hub for drug production and trafficking into the U.S. Beyond drug smuggling, the cartel represents significant challenges, including violent territorial disputes, extortion, and corruption. The cartel’s operations in Sonora exacerbate local crime rates, deepen insecurity, and destabilize smaller municipalities like Caborca, which face some of the most severe violence. These dynamics severely impact the region’s governance and safety.",
             location: {
                 center: [-113.01459, 29.47249],
                 zoom: 7.70,
@@ -2075,7 +2075,7 @@ var config = {
             hidden: false,
             title: 'Conflict',
             image: 'images/Hermosillo_Rescue.webp',
-            description: "",
+            description: "While the Sinaloa Cartel maintains dominant control in Sonora, the region is not exempt from violence, as rivalries and territorial disputes persist. Similarly, Tijuana experiences severe insecurity due to clashes between the Sinaloa Cartel and the Cartel Jalisco Nueva Generación, contributing to its high homicide rates. These conflicts destabilize communities, leaving both states grappling with crime and insecurity.",
             location: {
                 center: [-113.01459, 29.47249],
                 zoom: 7.70,
@@ -2137,7 +2137,7 @@ var config = {
             hidden: false,
             title: 'Who Helps?',
             image: 'images/Shelter_A.jpg',
-            description: "",
+            description: "The majority of migrant shelters in Mexico are operated by NGOs, which often face significant resource limitations. These non-profit organizations, such as Casa Tochán, Casa Monarca, and the International Red Cross, provide critical humanitarian assistance, including food, shelter, and legal help. However, their capacity is often stretched thin due to the increasing number of migrants passing through the country. Overcrowding is a major issue, particularly in cities like Tapachula and Ciudad Juárez, where shelters are located along the primary migrant routes. Despite these challenges, these NGOs remain central to alleviating the humanitarian crisis, highlighting the urgent need for more government support and international cooperation. <br><br>A positive experience is how in response to the growing influx of migrants, Mexico City's government adapted public infrastructure, such as sports stadiums, to serve as temporary shelters during the peak of migrant caravans. These spaces offered essential resources like food, medical care, and sanitation to those in need. The initiative was a part of a broader effort to manage the migration crisis, as temporary shelters provided a way to address overcrowding in traditional facilities. However, the reliance on non-profits and makeshift shelters underscores the need for a more coordinated, long-term solution to the migration challenge.<br><br> ",
             image2: 'images/Casa_Tochan.jpg',
             description2: 'Casa Tochan',
             location: {
