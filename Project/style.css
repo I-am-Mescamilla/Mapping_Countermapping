@@ -6,6 +6,17 @@ body {
         font-style: normal;
         font-size: 8;
     }
+#globe-heatmap p.p2{
+    font-size: 1vh !important;
+    font-family: "Cutive", serif !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+    text-align: justify !important;
+    margin: 0 !important;
+    color: white !important;
+    padding: 0 !important;
+    }
+
         a, a:hover, a:visited {
             color: #0071bc;
         }
@@ -83,6 +94,7 @@ body {
             font-size:3vh;
             padding-bottom:75vh;
         }
+
         #header p{
         font-size: 1.5vh;
         font-family: "Cutive", serif;
@@ -94,6 +106,8 @@ body {
         color: white;
         padding-block-start: 0h;
         }
+
+
         #interlude {
             width: 100vw;
         }

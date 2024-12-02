@@ -134,6 +134,13 @@ config.chapters.forEach((record, idx) => {
         chapter.appendChild(image);
     }
 
+    if (record.imagecredit) {
+        var story3 = document.createElement('p');
+        story3.className = 'p2';
+        story3.innerHTML = record.imagecredit;
+        chapter.appendChild(story3);
+    }
+
     if (record.description) {
         var story = document.createElement('p');
         story.innerHTML = record.description;
@@ -146,27 +153,17 @@ config.chapters.forEach((record, idx) => {
         chapter.appendChild(image2);
     }
 
+    if (record.imagecredit2) {
+        var story4 = document.createElement('p');
+        story4.className = 'p2';
+        story4.innerHTML = record.imagecredit2;
+        chapter.appendChild(story4);
+    }
+
     if (record.description2) {
         var story2 = document.createElement('p');
         story2.innerHTML = record.description2;
         chapter.appendChild(story2);
-    }
-
-    if (record.image3) {
-        // Create a container for the full-bleed image
-        var fullBleedContainer = document.createElement('div');
-        fullBleedContainer.className = 'full-bleed-image'; // Add the full-bleed class
-
-        // Create the image element
-        var image3 = new Image();
-        image3.src = record.image3;
-        image3.alt = record.imageAlt || 'Chapter image'; // Add alt text for accessibility
-
-        // Append the image to the container
-        fullBleedContainer.appendChild(image3);
-
-        // Append the container to the chapter
-        chapter.appendChild(fullBleedContainer);
     }
 
     if (record.video) {
