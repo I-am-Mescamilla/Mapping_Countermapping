@@ -6,17 +6,6 @@ body {
         font-style: normal;
         font-size: 8;
     }
-#globe-heatmap p.p2{
-    font-size: 1vh !important;
-    font-family: "Cutive", serif !important;
-    font-weight: 400 !important;
-    font-style: normal !important;
-    text-align: justify !important;
-    margin: 0 !important;
-    color: white !important;
-    padding: 0 !important;
-    }
-
         a, a:hover, a:visited {
             color: #0071bc;
         }
@@ -289,3 +278,17 @@ body {
         .mapboxgl-canvas-container.mapboxgl-touch-zoom-rotate.mapboxgl-touch-drag-pan .mapboxgl-canvas {
             touch-action: unset;
         }
+
+/* Image credits for all the chapters  */
+
+#features p.p2{
+    font-size: 1vh !important;
+    font-family: "Cutive", serif !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+    text-align: justify !important;
+    margin: 0 !important;
+    color: white !important;
+    padding: 0 !important;
+    }
+
